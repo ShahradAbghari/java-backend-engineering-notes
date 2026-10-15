@@ -12,6 +12,217 @@ body:
         Do not include confidential company, customer, or production data.
 
   - type: dropdown
+    id: system_type
+    attributes:
+      label: System Type
+      description: Select the closest description of the system.
+      options:
+        - Banking / Financial Services
+        - Payments / Transaction Processing
+        - Fintech
+        - E-commerce
+        - Marketplace
+        - Social Platform
+        - SaaS / B2B Platform
+        - Telecom
+        - Healthcare
+        - Government / Public Sector
+        - Logistics / Delivery
+        - Travel / Booking
+        - Media / Streaming
+        - IoT / Device Platform
+        - Internal Enterprise System
+        - Data / Analytics Platform
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: financial_transactions
+    attributes:
+      label: Financial Transactions
+      description: Did the system process financial or money-related transactions?
+      options:
+        - Yes - Core Financial Transactions
+        - Yes - Payments / Transfers
+        - Yes - Billing / Invoicing
+        - Yes - Wallet / Balance Updates
+        - No
+        - Mixed / Some Flows Only
+        - Prefer Not to Say
+    validations:
+      required: true
+
+  - type: dropdown
+    id: active_users
+    attributes:
+      label: Approximate Active User Scale
+      description: Use a range only. Do not disclose confidential exact figures.
+      options:
+        - Less than 10K
+        - 10K - 100K
+        - 100K - 1M
+        - 1M - 5M
+        - 5M - 10M
+        - 10M - 50M
+        - More than 50M
+        - Internal System / Not User-Facing
+        - Unknown
+        - Prefer Not to Say
+    validations:
+      required: true
+
+  - type: dropdown
+    id: peak_tps
+    attributes:
+      label: Approximate Peak TPS
+      description: Transactions/requests per second at peak. Use a range if exact numbers are sensitive.
+      options:
+        - Less than 10 TPS
+        - 10 - 100 TPS
+        - 100 - 500 TPS
+        - 500 - 1K TPS
+        - 1K - 3K TPS
+        - 3K - 5K TPS
+        - 5K - 10K TPS
+        - 10K - 50K TPS
+        - More than 50K TPS
+        - Batch-Oriented / TPS Not Applicable
+        - Unknown
+        - Prefer Not to Say
+    validations:
+      required: true
+
+  - type: dropdown
+    id: architecture_style
+    attributes:
+      label: Architecture Style
+      options:
+        - Monolith
+        - Modular Monolith
+        - Microservices
+        - Event-Driven Architecture
+        - Service-Oriented Architecture (SOA)
+        - Serverless
+        - Hybrid
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: workload
+    attributes:
+      label: Workload Characteristics
+      description: Select all that apply.
+      multiple: true
+      options:
+        - Read-Heavy
+        - Write-Heavy
+        - Read/Write Balanced
+        - CPU-Bound
+        - I/O-Bound
+        - Database-Heavy
+        - Cache-Heavy
+        - Messaging-Heavy
+        - Network-Heavy
+        - Latency-Sensitive
+        - Throughput-Sensitive
+        - Burst Traffic
+        - Steady Traffic
+        - Batch Processing
+        - Real-Time Processing
+        - Near-Real-Time Processing
+        - Long-Running Jobs
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: sync_async
+    attributes:
+      label: Processing Model
+      options:
+        - Mostly Synchronous
+        - Mostly Asynchronous
+        - Mixed Synchronous / Asynchronous
+        - Event-Driven
+        - Batch
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment Environment
+      description: Select all that apply.
+      multiple: true
+      options:
+        - On-Premise
+        - Private Cloud
+        - AWS
+        - Azure
+        - Google Cloud
+        - Kubernetes
+        - Virtual Machines
+        - Bare Metal
+        - Hybrid Cloud
+        - Multi-Region
+        - Single Region
+        - Other
+
+  - type: dropdown
+    id: availability
+    attributes:
+      label: Availability / Criticality
+      description: How critical was this system?
+      options:
+        - Mission-Critical / 24x7
+        - High Availability Required
+        - Business-Critical
+        - Standard Production System
+        - Internal / Non-Critical
+        - Unknown
+        - Prefer Not to Say
+    validations:
+      required: true
+
+  - type: dropdown
+    id: consistency
+    attributes:
+      label: Data Consistency Requirement
+      options:
+        - Strong Consistency
+        - Eventual Consistency
+        - Mixed
+        - Not Applicable
+        - Unknown
+
+  - type: dropdown
+    id: data_volume
+    attributes:
+      label: Approximate Data Scale
+      description: Use a broad range only.
+      options:
+        - Less than 10 GB
+        - 10 - 100 GB
+        - 100 GB - 1 TB
+        - 1 - 10 TB
+        - 10 - 100 TB
+        - More than 100 TB
+        - Unknown
+        - Prefer Not to Say
+
+  - type: textarea
+    id: system_context
+    attributes:
+      label: Short System Context
+      description: Briefly explain what the system did and why the workload mattered. Keep it to 2-4 sentences and remove confidential details.
+      placeholder: Example: Customer-facing payment platform processing real-time transfers across multiple backend services. Traffic peaked during payroll periods and latency directly affected transaction completion.
+    validations:
+      required: true
+
+  - type: dropdown
     id: domain
     attributes:
       label: Engineering Area
