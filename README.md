@@ -59,6 +59,10 @@ This repository supports a 28-post LinkedIn series covering practical backend en
 | 27 | Docker & Kubernetes | Planned |
 | 28 | End-to-End Production Architecture | Planned |
 
+## Featured Projects
+
+- [High Performance Java](projects/high-performance-java/README.md) — practical examples for low latency, high throughput, Redis caching, JVM/GC tuning, database optimization, and connection-pool tuning.
+
 ## Repository Philosophy
 
 The examples in this repository are intentionally practical. The goal is not to demonstrate every framework feature, but to explain why a design is chosen, where it works well, where it fails, and what changes when traffic and operational complexity increase.
