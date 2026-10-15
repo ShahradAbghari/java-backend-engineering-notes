@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: General Discussion
+    url: https://github.com/ShahradAbghari/java-backend-engineering-notes/discussions
+    about: Use Discussions for open-ended questions. Use the structured form for engineering experiences.
