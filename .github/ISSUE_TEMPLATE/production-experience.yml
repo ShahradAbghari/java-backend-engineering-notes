@@ -1,0 +1,445 @@
+name: Production Engineering Experience
+description: Share a short, structured, real-world engineering problem and how it was solved.
+title: "[Experience] "
+labels:
+  - community-experience
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please keep the submission concise and technical.
+        Focus on the problem, how the root cause was found, what was changed, and the measurable result.
+        Do not include confidential company, customer, or production data.
+
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Engineering Area
+      description: Select the main engineering area.
+      options:
+        - Performance Engineering
+        - Scalability
+        - Reliability / Resilience
+        - Security
+        - Architecture / System Design
+        - Observability
+        - Database
+        - Caching
+        - Messaging / Event-Driven Systems
+        - Networking
+        - API / Gateway
+        - Cloud / Infrastructure
+        - Kubernetes / Containers
+        - CI/CD / Delivery
+        - Concurrency / Multithreading
+        - JVM / Runtime
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: technologies
+    attributes:
+      label: Technologies / Stack
+      description: Select all technologies involved.
+      multiple: true
+      options:
+        - Java
+        - Java 8
+        - Java 11
+        - Java 17
+        - Java 21
+        - Spring Framework
+        - Spring Boot
+        - Spring MVC
+        - Spring WebFlux
+        - Spring Security
+        - Spring Data JPA
+        - Hibernate
+        - Jakarta EE
+        - Maven
+        - Gradle
+        - Oracle
+        - PostgreSQL
+        - MySQL
+        - MariaDB
+        - SQL Server
+        - MongoDB
+        - Cassandra
+        - Elasticsearch
+        - Redis
+        - Memcached
+        - Kafka
+        - RabbitMQ
+        - IBM MQ
+        - ActiveMQ
+        - MQTT
+        - REST
+        - GraphQL
+        - gRPC
+        - Spring Cloud Gateway
+        - Kong
+        - NGINX
+        - HAProxy
+        - Eureka
+        - Consul
+        - Docker
+        - Kubernetes
+        - Helm
+        - AWS
+        - Azure
+        - Google Cloud
+        - Linux
+        - HikariCP
+        - Tomcat
+        - Netty
+        - Prometheus
+        - Grafana
+        - OpenTelemetry
+        - Micrometer
+        - Jaeger
+        - Zipkin
+        - ELK / Elastic Stack
+        - Splunk
+        - Datadog
+        - New Relic
+        - Dynatrace
+        - Jenkins
+        - GitHub Actions
+        - GitLab CI/CD
+        - Argo CD
+        - Terraform
+        - Ansible
+        - JMeter
+        - k6
+        - Gatling
+        - Locust
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Primary Problem
+      description: Select the main symptom/problem.
+      options:
+        - High Latency
+        - High p95 / p99 Latency
+        - Low Throughput
+        - Throughput Drop Under Load
+        - High CPU Usage
+        - CPU Saturation
+        - High Memory Usage
+        - Memory Leak
+        - Frequent Full GC
+        - Long GC Pauses
+        - High Allocation Rate
+        - Thread Pool Saturation
+        - Too Many Threads
+        - Thread Contention
+        - Deadlock
+        - Blocking I/O
+        - Connection Pool Saturation
+        - Database Slow Query
+        - N+1 Query Problem
+        - Missing / Inefficient Index
+        - Database Locking
+        - Database Deadlock
+        - Database Connection Exhaustion
+        - Cache Miss Rate Too High
+        - Cache Stampede
+        - Hot Key
+        - Stale Cache / Consistency Problem
+        - Redis Latency
+        - Kafka Consumer Lag
+        - Kafka Rebalancing
+        - Kafka Producer Latency
+        - Message Backlog
+        - Duplicate Message Processing
+        - Message Loss / Delivery Issue
+        - Timeout
+        - Retry Storm
+        - Cascading Failure
+        - Circuit Breaker Open Too Often
+        - Downstream Service Slowdown
+        - API Gateway Bottleneck
+        - Load Balancer Bottleneck
+        - Network Latency
+        - DNS Issue
+        - Socket / Connection Exhaustion
+        - Kubernetes CPU Throttling
+        - Kubernetes Memory Limit / OOMKill
+        - Pod Restart Loop
+        - Autoscaling Too Slow
+        - Cold Start
+        - Container Resource Misconfiguration
+        - Authentication Latency
+        - Authorization Bottleneck
+        - Token Validation Issue
+        - Rate Limiting Problem
+        - Serialization / Deserialization Overhead
+        - Logging Overhead
+        - Excessive Synchronous Calls
+        - Poor Backpressure Handling
+        - Queue Growth
+        - File / Disk I/O Bottleneck
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: symptoms
+    attributes:
+      label: Observed Symptoms
+      description: Select all symptoms that were visible.
+      multiple: true
+      options:
+        - Increased Average Latency
+        - Increased p95 Latency
+        - Increased p99 Latency
+        - Request Timeouts
+        - HTTP 5xx Errors
+        - HTTP 429 Errors
+        - Throughput Decrease
+        - Queue Depth Increase
+        - CPU Spike
+        - CPU Saturation
+        - Memory Growth
+        - OOM / OOMKill
+        - GC Frequency Increase
+        - Long GC Pauses
+        - Thread Count Increase
+        - Blocked Threads
+        - Pending DB Connections
+        - DB Connection Timeout
+        - Slow Queries
+        - Lock Wait Increase
+        - Cache Hit Ratio Drop
+        - Redis Command Latency Increase
+        - Consumer Lag Increase
+        - Broker Backlog
+        - Retry Count Increase
+        - Circuit Breaker Trips
+        - Pod Restarts
+        - Autoscaling Events
+        - Network Errors
+        - Packet Loss
+        - Error Rate Increase
+        - Other
+
+  - type: dropdown
+    id: detection
+    attributes:
+      label: How Was the Problem Detected?
+      description: Select all tools/signals used to detect or investigate the issue.
+      multiple: true
+      options:
+        - User / Customer Report
+        - Production Alert
+        - Application Logs
+        - Structured Logs
+        - Metrics Dashboard
+        - Prometheus
+        - Grafana
+        - APM
+        - Distributed Tracing
+        - OpenTelemetry
+        - Jaeger
+        - Zipkin
+        - Datadog
+        - New Relic
+        - Dynatrace
+        - Splunk
+        - ELK / Elastic Stack
+        - JVM GC Logs
+        - JVM Flight Recorder (JFR)
+        - Java Mission Control
+        - Thread Dump
+        - Heap Dump
+        - Java Profiler
+        - async-profiler
+        - VisualVM
+        - Database Slow Query Log
+        - Database Execution Plan
+        - EXPLAIN / EXPLAIN ANALYZE
+        - Database AWR / Performance Report
+        - Redis INFO / Slowlog
+        - Kafka Consumer Lag Metrics
+        - Broker Metrics
+        - Kubernetes Metrics
+        - kubectl top
+        - Kubernetes Events
+        - Container Logs
+        - Load Test
+        - JMeter
+        - k6
+        - Gatling
+        - Synthetic Monitoring
+        - Packet Capture
+        - tcpdump
+        - Wireshark
+        - OS Metrics
+        - Linux top / htop
+        - iostat
+        - vmstat
+        - sar
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: root_cause_category
+    attributes:
+      label: Root Cause Category
+      description: Select the root-cause category.
+      options:
+        - Application Code
+        - Algorithm / Data Structure
+        - Concurrency / Locking
+        - JVM / GC
+        - Thread Pool
+        - Connection Pool
+        - Database Query
+        - Database Indexing
+        - Database Locking
+        - Cache Design
+        - Messaging / Broker
+        - Serialization
+        - Network
+        - API Gateway / Proxy
+        - Downstream Dependency
+        - Retry / Timeout Configuration
+        - Kubernetes Resource Limits
+        - Autoscaling
+        - Cloud Infrastructure
+        - Logging / Observability Overhead
+        - Security / Authentication
+        - Configuration
+        - Capacity Planning
+        - Architecture / Design
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: fix_category
+    attributes:
+      label: Fix Category
+      description: Select all types of changes used in the fix.
+      multiple: true
+      options:
+        - Code Optimization
+        - Algorithm Change
+        - Reduce Blocking Calls
+        - Async Processing
+        - Batching
+        - Parallelization
+        - Bounded Concurrency
+        - Thread Pool Tuning
+        - Connection Pool Tuning
+        - JVM / GC Tuning
+        - Heap Sizing
+        - Database Query Rewrite
+        - Add / Change Index
+        - Reduce N+1 Queries
+        - Database Schema Change
+        - Introduce Cache
+        - Cache TTL Change
+        - Cache Invalidation Change
+        - Redis Tuning
+        - Kafka Consumer Tuning
+        - Kafka Producer Tuning
+        - Partitioning Change
+        - Backpressure
+        - Retry Policy Change
+        - Timeout Change
+        - Circuit Breaker
+        - Bulkhead
+        - Rate Limiting
+        - Load Balancing
+        - Horizontal Scaling
+        - Vertical Scaling
+        - Kubernetes Resource Change
+        - Autoscaling Change
+        - Network Change
+        - API Gateway Tuning
+        - Reduce Payload Size
+        - Serialization Change
+        - Logging Reduction
+        - Architecture Refactor
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: other
+    attributes:
+      label: Other Technology / Problem / Tool
+      description: Only fill this if you selected Other above.
+      placeholder: Keep it short.
+
+  - type: textarea
+    id: root_cause
+    attributes:
+      label: Root Cause
+      description: What was the actual cause? Keep it concise.
+      placeholder: 1-3 short sentences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: Fix
+      description: What exactly was changed?
+      placeholder: 1-4 short sentences.
+    validations:
+      required: true
+
+  - type: textarea
+    id: result
+    attributes:
+      label: Result
+      description: What changed after the fix? Add measurements if available.
+      placeholder: Example: p99 latency dropped from ... to ... under the same load.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence Level
+      description: How strongly can the result be supported?
+      options:
+        - Reproducible Benchmark
+        - Production Metrics
+        - Load Test Result
+        - Query Plan / Database Evidence
+        - Trace / Profile Evidence
+        - Log Evidence
+        - Observed in Production but Not Reproducible
+        - Plausible but Not Independently Verified
+    validations:
+      required: true
+
+  - type: textarea
+    id: lesson
+    attributes:
+      label: Key Lesson
+      description: One short takeaway for other engineers.
+      placeholder: 1-2 sentences.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm this is a real engineering experience and not an invented example.
+          required: true
+        - label: I removed confidential company, customer, credential, and production data.
+          required: true
+        - label: I kept the submission concise and technical.
+          required: true
